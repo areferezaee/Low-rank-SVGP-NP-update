@@ -379,9 +379,18 @@ This repository contains research code accompanying the manuscript.
 The implementation may be updated as part of the ongoing research and publication process.
 
 ## Citation
+## Citation
 
-Citation information will be added when the paper is publicly available.
+If you use this code in your research, please cite:
 
-## License
+```bibtex
+@misc{rezaei2026lowlight,
+  author       = {Arefeh Rezaei},
+  title        = {Video Captioning in Low-Light Conditions through Efficient Uncertainty-Aware Caption Correction},
+  year         = {2026},
+  note         = {Preprint, to appear on arXiv}
+}
+```
 
-License information will be added in the final public release.
+An arXiv identifier and link will be added after the manuscript is publicly available.
+
