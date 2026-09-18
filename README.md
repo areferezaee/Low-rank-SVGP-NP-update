@@ -241,43 +241,102 @@ pip install -r requirements.txt
 
 The exact dependency versions will be listed in `requirements.txt`.
 
+
+
 ## Running the Model
 
 The main entry point is:
 
 ```bash
-python DarkLowligihtModule.py
+python3 DarkLowligihtModule.py
 ```
 
-Important command-line arguments include:
+The reported experiment uses:
 
 ```text
---dataset
---natural-lr
---num-inducing-points
---train_strategy
---outputscale
---model-path
---OnlyTest-Model
---seed
+dataset                  = ARID
+natural learning rate    = 0.9
+number of inducing points = 22
+training strategy        = joint
+output scale             = 1.0
 ```
 
-Example:
+### Training
+
+When the model has not yet been trained, run:
 
 ```bash
-python DarkLowligihtModule.py \
-    --dataset ARID \
-    --natural-lr 0.9 \
-    --num-inducing-points 5 \
-    --train_strategy joint \
-    --outputscale 1.0
+python3 DarkLowligihtModule.py \
+    --dataset='ARID' \
+    --natural-lr=0.9 \
+    --num-inducing-points=22 \
+    --train_strategy='joint' \
+    --outputscale=1. \
+    --OnlyTest-Model='NotYet'
 ```
 
-The ARID data paths are currently specified in:
+The trained estimator is saved to:
 
 ```text
-Embeding_engineering/ARID.py
+model_path/Darklowlightmodel.pth
 ```
+
+### Testing a Trained Model
+
+After training, the saved model can be evaluated using:
+
+```bash
+python3 DarkLowligihtModule.py \
+    --dataset='ARID' \
+    --natural-lr=0.9 \
+    --num-inducing-points=22 \
+    --train_strategy='joint' \
+    --outputscale=1. \
+    --OnlyTest-Model='Now'
+```
+
+The default model path is:
+
+```text
+model_path/Darklowlightmodel.pth
+```
+
+Generated correction representations are saved under:
+
+```text
+dlta_bar_Z/
+```
+
+> **Note:** The current implementation uses the case-sensitive training strategy value `joint`.
+
+## Uncertainty-Aware Representation Correction
+
+At test time, the trained Gaussian-process correction model predicts a residual representation:
+
+$$
+\widehat{\Delta z}.
+$$
+
+A sample-dependent uncertainty-aware coefficient \(\alpha\) is then determined from the predictive statistics of the Gaussian process and used to control the magnitude of the correction.
+
+The corrected representation is computed as:
+
+$$
+\boxed{
+\hat z_{\mathrm{corrected}}
+=
+z+\alpha\,\widehat{\Delta z}
+}
+$$
+
+where:
+
+* \(z\) is the original projected representation,
+* \(\widehat{\Delta z}\) is the GP-estimated residual,
+* \(\alpha\) is the uncertainty-aware correction coefficient,
+* \(\hat z_{\mathrm{corrected}}\) is the corrected representation passed to the downstream language-generation stage.
+
+Thus, the estimated residual is not directly added with a fixed magnitude. Instead, the correction strength is adaptively controlled for each test sample using the predictive uncertainty of the correction model.
 
 ## Outputs
 
