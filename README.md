@@ -14,9 +14,7 @@ Instead of fine-tuning the underlying VLM, the proposed method introduces a ligh
 
 Given an original projected representation \(z\), the correction target is defined as:
 
-$$
-\Delta z = z_{gt} - z,
-$$
+\boxed{ \hat z_{\mathrm{corrected}}
 
 where \(z_{gt}\) is a verified target representation derived from a semantically correct caption.
 
@@ -95,11 +93,13 @@ The Gaussian process model learns to estimate this residual from the original re
 
 At inference time, the estimated correction is adaptively scaled according to predictive uncertainty and applied to the original representation:
 
-$$
-z_{\text{corrected}}
+\[
+\boxed{
+\hat z_{\mathrm{corrected}}
 =
-z + \alpha(x)\,\widehat{\Delta z},
-$$
+z+\alpha\,\widehat{\Delta z}
+}
+\]
 
 where \(\alpha(x)\) is a sample-dependent uncertainty-aware coefficient.
 
