@@ -321,15 +321,10 @@ A sample-dependent uncertainty-aware coefficient \(\alpha\) is then determined f
 
 The corrected representation is computed as:
 
-The corrected representation is computed as:
+$$
+\hat{z}_{\mathrm{corrected}} = z + \alpha \widehat{\Delta z}
+$$
 
-$$
-\boxed{
-\hat{z}_{\mathrm{corrected}}
-=
-z + \alpha \widehat{\Delta z}
-}
-$$
 where:
 
 * \(z\) is the original projected representation,
