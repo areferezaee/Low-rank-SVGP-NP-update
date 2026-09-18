@@ -342,7 +342,7 @@ Thus, the estimated residual is not directly added with a fixed magnitude. Inste
 
 ## Outputs
 
-Training and evaluation may generate:
+Training and evaluation generates:
 
 ```text
 model_path/
