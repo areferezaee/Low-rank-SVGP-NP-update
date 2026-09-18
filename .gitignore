@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+
+# Testing / type checking
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+*.log
+
+# Experiment outputs
+model_path/
+dlta_bar_Z/
+
+# Datasets / local data
+data/
+
+# TensorBoard
+runs/
