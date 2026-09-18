@@ -83,25 +83,31 @@ The underlying VideoChat2 model is kept unchanged. The correction model is train
 
 ## Residual Learning
 
-For each training sample, the original representation and a verified target representation are used to construct the residual target:
+For each training sample, the original projected representation \(z\) and a verified target representation \(z_{gt}\) are used to construct the residual correction target:
 
 $$
-\Delta z = z_{gt} - z.
+\Delta z = z_{gt} - z
 $$
 
-The Gaussian process model learns to estimate this residual from the original representation.
+The sparse Gaussian process model is trained to estimate this representation-level residual from the original projected representation.
 
-At inference time, the estimated correction is adaptively scaled according to predictive uncertainty and applied to the original representation:
+At inference time, the trained correction model produces an estimated residual:
 
-\[
-\boxed{
-\hat z_{\mathrm{corrected}}
-=
-z+\alpha\,\widehat{\Delta z}
-}
-\]
+$$
+\widehat{\Delta z}
+$$
 
-where \(\alpha(x)\) is a sample-dependent uncertainty-aware coefficient.
+A sample-dependent uncertainty-aware coefficient \(\alpha\) is then used to adapt the magnitude of the predicted correction.
+
+The corrected representation is computed as:
+
+$$
+\hat{z}_{\mathrm{corrected}} = z + \alpha \widehat{\Delta z}
+$$
+
+The corrected representation is subsequently passed to the downstream language-generation stage for caption generation.
+
+This formulation allows the correction strength to vary across test samples according to the predictive uncertainty of the Gaussian process, rather than applying the same correction magnitude to every input.
 
 ## Sparse Gaussian Process Formulation
 
