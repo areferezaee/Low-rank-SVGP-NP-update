@@ -1,0 +1,16 @@
+# Core numerical / deep learning
+numpy
+scikit-learn
+
+# PyTorch stack
+# Install the PyTorch / torchvision build appropriate for your CUDA setup.
+torch
+torchvision
+
+# Gaussian Process
+# Used by the SVGP / kernel / variational-GP implementation.
+gpytorch==1.15.2
+
+# Utilities / logging
+tqdm
+tensorboard
