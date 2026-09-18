@@ -379,7 +379,6 @@ This repository contains research code accompanying the manuscript.
 The implementation may be updated as part of the ongoing research and publication process.
 
 ## Citation
-## Citation
 
 If you use this code in your research, please cite:
 
