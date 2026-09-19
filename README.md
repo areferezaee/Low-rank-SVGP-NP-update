@@ -369,6 +369,12 @@ The training script exposes:
 
 for controlling the random seed used by the experiment.
 
+## VideoChat2 Prompt
+
+The question used for video caption generation in the experiments is:
+
+> **Describe the human action**
+
 ## Applicability
 
 Although VideoChat2 is used as the primary VLM in the experiments, the proposed correction strategy is not inherently tied to a specific language-generation model.
