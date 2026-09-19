@@ -281,7 +281,8 @@ python3 DarkLowligihtModule.py \
     --num-inducing-points=22 \
     --train_strategy='joint' \
     --outputscale=1. \
-    --OnlyTest-Model='NotYet'
+    --OnlyTest-Model='NotYet'\
+    --seed=42
 ```
 
 The trained estimator is saved to:
@@ -356,18 +357,6 @@ runs/
 These directories contain trained models, predicted correction representations, and experiment logs.
 
 Generated artifacts are excluded from version control through `.gitignore`.
-
-## Reproducibility
-
-The project provides random-seed initialization through `utils.py`.
-
-The training script exposes:
-
-```text
---seed
-```
-
-for controlling the random seed used by the experiment.
 
 ## VideoChat2 Prompt
 
