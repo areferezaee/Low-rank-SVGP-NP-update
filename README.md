@@ -98,7 +98,7 @@ $$
 \widehat{\Delta z}
 $$
 
-A sample-dependent uncertainty-aware coefficient \(\alpha\) is then used to adapt the magnitude of the predicted correction.
+A sample-dependent uncertainty-aware coefficient $\alpha$ is then used to adapt the magnitude of the predicted correction.
 
 The corrected representation is computed as:
 
