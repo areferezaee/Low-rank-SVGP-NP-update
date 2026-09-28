@@ -315,7 +315,7 @@ $$
 \widehat{\Delta z}.
 $$
 
-A sample-dependent uncertainty-aware coefficient \(\alpha\) is then determined from the predictive statistics of the Gaussian process and used to control the magnitude of the correction.
+A sample-dependent uncertainty-aware coefficient $\alpha is then determined from the predictive statistics of the Gaussian process and used to control the magnitude of the correction.
 
 The corrected representation is computed as:
 
@@ -325,10 +325,10 @@ $$
 
 where:
 
-* \(z\) is the original projected representation,
-* \(\widehat{\Delta z}\) is the GP-estimated residual,
+* $z$ is the original projected representation,
+* $\widehat{\Delta z}$ is the GP-estimated residual,
 * \(\alpha\) is the uncertainty-aware correction coefficient,
-* \(\hat z_{\mathrm{corrected}}\) is the corrected representation passed to the downstream language-generation stage.
+* $\hat z_{\mathrm{corrected}}$ is the corrected representation passed to the downstream language-generation stage.
 
 Thus, the estimated residual is not directly added with a fixed magnitude. Instead, the correction strength is adaptively controlled for each test sample using the predictive uncertainty of the correction model.
 
