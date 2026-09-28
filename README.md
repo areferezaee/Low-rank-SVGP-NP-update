@@ -84,7 +84,7 @@ The underlying VideoChat2 model is kept unchanged. The correction model is train
 
 ## Residual Learning
 
-For each training sample, the original projected representation \(z\) and a verified target representation \(z_{gt}\) are used to construct the residual correction target:
+For each training sample, the original projected representation $z$ and a verified target representation \(z_{gt}\) are used to construct the residual correction target:
 
 $$
 \Delta z = z_{gt} - z
