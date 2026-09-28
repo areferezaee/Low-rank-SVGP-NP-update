@@ -122,9 +122,9 @@ $$
 
 where:
 
-* \(Q\) contains the retained eigenvectors,
-* \(\Lambda\) contains the corresponding eigenvalues,
-* \(\delta\) is a numerical stabilization term.
+* $Q$ contains the retained eigenvectors,
+* $\Lambda$ contains the corresponding eigenvalues,
+* $\delta$ is a numerical stabilization term.
 
 The implementation provides low-rank procedures for covariance inversion and log-determinant computation.
 
