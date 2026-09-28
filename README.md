@@ -31,13 +31,11 @@ The proposed framework provides the following main components:
 
 2. **Sparse Gaussian process-based error estimation** with an efficient formulation for predicting representation-level residuals.
 
-3. **Partitioned combined-kernel formulation**, in which the projected representation is divided into multiple segments and processed using multiple kernel components.
+3. **Sample-dependent uncertainty-aware correction**, using predictive uncertainty to adapt the correction magnitude for each test sample.
 
-4. **Sample-dependent uncertainty-aware correction**, using predictive uncertainty to adapt the correction magnitude for each test sample.
+4. **Parameter-efficient training**, where the correction model is trained separately from VideoChat2 using only **44 samples from the ARID dataset**.
 
-5. **Parameter-efficient training**, where the correction model is trained separately from VideoChat2 using only **44 samples from the ARID dataset**.
-
-6. Evaluation of the method at both the **representation level** and the **caption level**, including the effect of correction on action-related caption content.
+5. Evaluation of the method at both the **representation level** and the **caption level**, including the effect of correction on action-related caption content.
 
 ## Method
 
