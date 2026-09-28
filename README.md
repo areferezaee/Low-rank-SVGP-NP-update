@@ -128,14 +128,6 @@ where:
 
 The implementation provides low-rank procedures for covariance inversion and log-determinant computation.
 
-## Partitioned Combined Kernel
-
-The projected representation is partitioned into multiple segments. Each segment is processed using a kernel component, and the resulting covariance contributions are combined.
-
-The current implementation uses multiple `LinearKernel` components in the partitioned representation.
-
-This design is intended to improve residual estimation while retaining the computational advantages of the sparse Gaussian-process formulation.
-
 ## Natural-Parameter Variational Update
 
 The variational posterior is represented through natural parameters:
