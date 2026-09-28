@@ -18,7 +18,7 @@ $$
 \Delta z = z_{gt} - z
 $$
 
-where \(z_{gt}\) is a verified target representation derived from a semantically correct caption.
+where $\(z_{gt}\)$ is a verified target representation derived from a semantically correct caption.
 
 
 The predicted residual is adaptively scaled using a **sample-dependent uncertainty-aware coefficient** and added to the original representation before caption generation.
