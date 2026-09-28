@@ -27,7 +27,7 @@ The predicted residual is adaptively scaled using a **sample-dependent uncertain
 
 The proposed framework provides the following main components:
 
-1. **Uncertainty-aware representation correction** for improving VLM-generated action captions in real-world low-light videos without fine-tuning the underlying VLM.
+1. **Uncertainty-aware representation correction** based on a partitioned combined-kernel design for improving VLM-generated action captions in real-world low-light videos without fine-tuning the underlying VLM.
 
 2. **Sparse Gaussian process-based error estimation** with an efficient formulation for predicting representation-level residuals.
 
