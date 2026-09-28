@@ -90,7 +90,7 @@ $$
 \Delta z = z_{gt} - z
 $$
 
-The sparse Gaussian process model is trained to estimate this representation-level residual from the original projected representation.
+The proposed sparse Gaussian process model is trained to estimate this representation-level residual from the original projected representation.
 
 At inference time, the trained correction model produces an estimated residual:
 
