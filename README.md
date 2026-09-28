@@ -307,8 +307,6 @@ Generated correction representations are saved under:
 dlta_bar_Z/
 ```
 
-> **Note:** The current implementation uses the case-sensitive training strategy value `joint`.
-
 ## Uncertainty-Aware Representation Correction
 
 At test time, the trained Gaussian-process correction model predicts a residual representation:
