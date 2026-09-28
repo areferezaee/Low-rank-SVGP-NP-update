@@ -132,8 +132,8 @@ The implementation provides low-rank procedures for covariance inversion and log
 
 The variational posterior is represented through natural parameters:
 
-* \(\eta\): natural mean parameter
-* \(H\): covariance-related natural parameter
+* $\eta$: natural mean parameter
+* $H$: covariance-related natural parameter
 
 The implementation performs a natural-parameter-style update toward the target variational parameters using the configured natural learning rate.
 
