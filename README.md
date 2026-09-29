@@ -368,12 +368,16 @@ The implementation may be updated as part of the ongoing research and publicatio
 
 If you use this code in your research, please cite:
 
+
 ```bibtex
-@misc{rezaei2026lowlight,
-  author       = {Arefeh Rezaei},
-  title        = {Video Captioning in Low-Light Conditions through Efficient Uncertainty-Aware Caption Correction},
-  year         = {2026},
-  note         = {Preprint, to appear on arXiv}
+@misc{rezaei2026videocaptioninglowlightconditions,
+      title={Video Captioning in Low-Light Conditions through Efficient Uncertainty-Aware Caption Correction}, 
+      author={Arefeh Rezaei},
+      year={2026},
+      eprint={2609.31697},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2609.31697}, 
 }
 ```
 
