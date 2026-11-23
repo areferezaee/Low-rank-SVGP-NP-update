@@ -13,7 +13,7 @@ class GPModel(gpytorch.Module):
         super().__init__()
         # mean and cov functions
         self.jitter_val = jitter_val
-        self.num_modules = 9
+        self.num_modules = 4#9
 
     def forward(self, x1, x2=None):
         if x2 is None:
