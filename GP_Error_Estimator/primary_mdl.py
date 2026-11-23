@@ -172,7 +172,7 @@ class VariationalELBO(gpytorch.Module):
         # Low-rank parameters
         # ----------------------------------------------------
 
-        self.low_rank_rank = 22#low_rank_rank
+        self.low_rank_rank = 11#22#low_rank_rank
         self.low_rank_jitter = 1e-1#low_rank_jitter
 
         # ----------------------------------------------------
