@@ -52,6 +52,8 @@ def get_parser():
    parser.add_argument('--model-path', type=str, default='model_path/Darklowlightmodel.pth')
    parser.add_argument('--OnlyTest-Model', type=str, default='NotYet', choices=['NotYet', 'Now'])
    parser.add_argument('--outputscale', type=float, default=1., help='output scale')
+   parser.add_argument('--Unc', type=float, default=121., help='a fixed number based on the number of partitions in kernel and the rank')
+   parser.add_argument('--rank', type=int, default=11)
    parser.add_argument('--eval-every', type=int, default=1, help='num. epochs between test set eval')
    parser.add_argument('--seed', default=42, type=int, help='random seed')
    parser.add_argument('--num-workers', default=1, type=int, help='num wortkers')
