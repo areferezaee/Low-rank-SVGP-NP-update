@@ -4,6 +4,7 @@ from gpytorch.models import ApproximateGP, GP
 import gpytorch
 from GP_Error_Estimator.interface import Interface_VI
 import torch
+import random
 
 class Model(gpytorch.Module):
     def __init__(self, args):
@@ -73,13 +74,17 @@ class Estimator(Model):
              if mode == 'test':
                print("\n===== Nescessary for Alpha in teseting one sample=====")
                gamma = mu.max() - mu.min()
-               betta = torch.sqrt(sigma.sum()) - 171.
+               betta = torch.sqrt(sigma.sum())*(pow(1.5,(2-(self.args.rank/11)))) - self.args.Unc
                r = gamma/betta
-               
-               if r < 20. and betta >= 0.81:
-                  alpha = 0.4 #0.3 #0.5
+               frame_num = 12.
+               C1 = r + (12./frame_num) < 21.
+               c21 = gamma >= 16.
+               c22 = betta < 0.81
+               C2 = c21 or c22
+               if C1 and C2:
+                  alpha = random.choice([.7, .8, .89])
                else:
-                  alpha = .1 #1.1 #1.11 #.9
+                  alpha = random.choice([.35, .45, .5])
                print('Alpha is:', alpha)
         
         return mse, mae, nlpd, mu
