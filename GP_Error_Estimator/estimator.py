@@ -82,9 +82,9 @@ class Estimator(Model):
                c22 = betta < 0.81
                C2 = c21 or c22
                if C1 and C2:
-                  alpha = random.choice([.7, .8, .89])
+                  alpha = random.choice([.7, .8, .89])#random.randrange(6.9, .9.1)
                else:
-                  alpha = random.choice([.35, .45, .5])
+                  alpha = random.choice([.35, .45, .5])#random.randrange(2.9, .5.1)
                print('Alpha is:', alpha)
         
         return mse, mae, nlpd, mu
